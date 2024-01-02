@@ -68,7 +68,7 @@ const images = [
   },
 ];
 
-const createGallImg = ({ preview, original, description }) => `
+const createGalleryImage = ({ preview, original, description }) => `
   <li class="gallery-item">
     <a class="gallery-link" href="${original}">
       <img
@@ -79,11 +79,11 @@ const createGallImg = ({ preview, original, description }) => `
     </a>
   </li>
 `;
-const gallImg = images.map(createGallImg).join('');
+const gallImg = images.map(createGalleryImage).join('');
 const gallery = document.querySelector('.gallery');
 gallery.insertAdjacentHTML('beforeend', gallImg);
 let lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionPosition: 'bottom',
-  captionDelay: '250',
+  captionDelay: 250,
 });
